@@ -2,6 +2,8 @@
 import numpy as np
 from scipy import io
 import librosa
+import os
+from glob import glob
 
 def extract_spec(wavfile, savefile, nfft, hop):
     '''Calculate magnitude spectrogram from raw audio file by librosa.
@@ -28,4 +30,17 @@ if __name__ == '__main__':
     # wavfile = xxx
     # savefile = xxx
     # extract_spec(wav_file, savefile, nfft, hop)
+
+    # wavfile = "./SpeechFormer/metadata/dataset/data/"
+    savefile = "metadata/dataset/wav_spec_20ms_mat/"
+    if not os.path.exists(savefile):
+      os.makedirs(savefile)
+    # wavfile = "./SpeechFormer/metadata/dataset/data/content/selected_audio/300_s0_AUDIO.wav"
+    wavepath = "metadata/dataset/data/content/selected_audio/"
     
+    for f in glob(wavepath + '/*.wav'):
+      file_name = os.path.split(f)[-1].split('_')[:-1]
+      file_name = '_'.join(file_name)
+      file_name = os.path.join(savefile, file_name+'.mat')
+      # print(file_name)
+      extract_spec(f, file_name, nfft, hop)
