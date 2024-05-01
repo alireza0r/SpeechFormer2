@@ -149,7 +149,8 @@ def folder2lmdb(opt: dict):
 if __name__ == '__main__':
     opt = {
         'database': 'daic_woz',
-        'feature': 'wavlm24',
+        'feature': 'spec',
+        # 'feature': 'wavlm24',
         'lmdb_name': 'daic_woz_wavlm_L24',
         'lmdb_root': '/148Dataset/data-chen.weidong/lmdb',
         'commit_interval': 100,
