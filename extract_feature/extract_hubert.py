@@ -167,6 +167,9 @@ def handle_pitt(model: Hubert):
 def handle_daic(model: Hubert):
     # matroot = '/148Dataset/data-chen.weidong/AVEC2017/feature/wav_wav2vec_mat'
     matroot = '/content/SpeechFormer2/metadata/dataset/wav_spec_20ms_mat'
+    if not os.path.exists(matroot):
+        os.makedirs(matroot)
+        
     # save_L12 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L12_mat'
     save_L12 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat'
     save_L24 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat'
