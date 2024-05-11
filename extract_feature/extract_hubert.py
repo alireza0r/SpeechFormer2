@@ -181,7 +181,7 @@ def handle_daic(model: Hubert):
     print(f'We have {len(mats)} samples in total.')
     for mat in mats:
         # wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
-        wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}' # Why wav file ?
+        wavfile = os.path.join(f'/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/', mat) # Why wav file ?
         savefile_L12 = os.path.join(save_L12, mat)
         savefile_L24 = os.path.join(save_L24, mat)
         extract_hubert(model, 12, wavfile, savefile_L12)
