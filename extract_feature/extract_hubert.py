@@ -165,9 +165,12 @@ def handle_pitt(model: Hubert):
             extract_hubert(model, 24, wavfile, savefile_L24)
 
 def handle_daic(model: Hubert):
-    matroot = '/148Dataset/data-chen.weidong/AVEC2017/feature/wav_wav2vec_mat'
-    save_L12 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L12_mat'
-    save_L24 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L24_mat'
+    # matroot = '/148Dataset/data-chen.weidong/AVEC2017/feature/wav_wav2vec_mat'
+    matroot = '/content/SpeechFormer2/metadata/dataset/wav_spec_20ms_mat'
+    # save_L12 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L12_mat'
+    save_L12 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat'
+    save_L24 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat'
+    # save_L24 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L24_mat'
 
     if not os.path.exists(save_L12):
         os.makedirs(save_L12)
@@ -177,7 +180,7 @@ def handle_daic(model: Hubert):
     mats = os.listdir(matroot)
     print(f'We have {len(mats)} samples in total.')
     for mat in mats:
-        wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav'
+        wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
         savefile_L12 = os.path.join(save_L12, mat)
         savefile_L24 = os.path.join(save_L24, mat)
         extract_hubert(model, 12, wavfile, savefile_L12)
@@ -188,11 +191,12 @@ if __name__ == '__main__':
 
     get_receptive_field(k=[10, 3, 3, 3, 3, 2, 2], s=[5, 2, 2, 2, 2, 2, 2])
     
-    ckpt_path = "/148Dataset/data-chen.weidong/pre_trained_model/hubert/hubert_large_ll60k.pt"  # hubert_large_ll60k, hubert_base_ls960
+    # ckpt_path = "/pre_trained_model/hubert/hubert_large_ll60k.pt"  # hubert_large_ll60k, hubert_base_ls960
+    ckpt_path = "/pre_trained_model/hubert/hubert_base_ls960.pt"  # hubert_large_ll60k, hubert_base_ls960
     model = Hubert(ckpt_path)
 
     # handle_iemocap(model)
     # handle_meld(model)
     # handle_pitt(model)
-    # handle_daic(model)
+    handle_daic(model)
     
