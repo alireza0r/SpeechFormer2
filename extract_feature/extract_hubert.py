@@ -167,13 +167,11 @@ def handle_pitt(model: Hubert):
 def handle_daic(model: Hubert):
     # matroot = '/148Dataset/data-chen.weidong/AVEC2017/feature/wav_wav2vec_mat'
     # matroot = '/content/SpeechFormer2/metadata/dataset/wav_spec_20ms_mat'
-    matroot = '/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/'
-    if not os.path.exists(matroot):
-        os.makedirs(matroot)
+    matroot = '/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/' # Path to read wav files
         
     # save_L12 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L12_mat'
-    save_L12 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat'
-    save_L24 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat'
+    save_L12 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat' # Path to save features
+    save_L24 = '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat' # Path to save features
     # save_L24 = '/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L24_mat'
 
     if not os.path.exists(save_L12):
@@ -186,8 +184,8 @@ def handle_daic(model: Hubert):
     for mat in mats:
         # wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
         wavfile = os.path.join(f'/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/', mat) # Why wav file ?
-        savefile_L12 = os.path.join(save_L12, mat)
-        savefile_L24 = os.path.join(save_L24, mat)
+        savefile_L12 = os.path.join(save_L12, mat+'.mat')
+        savefile_L24 = os.path.join(save_L24, mat+'.mat')
         extract_hubert(model, 12, wavfile, savefile_L12)
         print('savefile_L12 was passed')
         extract_hubert(model, 24, wavfile, savefile_L24)
