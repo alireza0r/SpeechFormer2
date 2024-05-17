@@ -199,7 +199,7 @@ if __name__ == '__main__':
     get_receptive_field(k=[10, 3, 3, 3, 3, 2, 2], s=[5, 2, 2, 2, 2, 2, 2])
     
     # ckpt_path = "/pre_trained_model/hubert/hubert_large_ll60k.pt"  # hubert_large_ll60k, hubert_base_ls960
-    ckpt_path = "/content/pre_trained_model/hubert/hubert_base_ls960.pt"  # hubert_large_ll60k, hubert_base_ls960
+    ckpt_path = "/content/pre_trained_model/hubert/hubert_large_ll60k.pt"  # hubert_large_ll60k, hubert_base_ls960
     model = Hubert(ckpt_path)
 
     # handle_iemocap(model)
