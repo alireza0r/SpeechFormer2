@@ -166,7 +166,8 @@ def handle_pitt(model: Hubert):
 
 def handle_daic(model: Hubert):
     # matroot = '/148Dataset/data-chen.weidong/AVEC2017/feature/wav_wav2vec_mat'
-    matroot = '/content/SpeechFormer2/metadata/dataset/wav_spec_20ms_mat'
+    # matroot = '/content/SpeechFormer2/metadata/dataset/wav_spec_20ms_mat'
+    matroot = '/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/'
     if not os.path.exists(matroot):
         os.makedirs(matroot)
         
