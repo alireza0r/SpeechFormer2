@@ -41,7 +41,7 @@
     "hubert12": {
         "feature_dim": 1024, 
         "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/daic_woz_hubert_L12_v6",
-        "matdir": "/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L12_mat",
+        "matdir": "./metadata/dataset/wav_spec_20ms_mat",
         "matkey": "hubert", 
         "length": 426,
         "pad_value": 0,
