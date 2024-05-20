@@ -182,15 +182,19 @@ def handle_daic(model: Hubert):
     mats = os.listdir(matroot)
     print(f'We have {len(mats)} samples in total.')
     for mat in mats:
-        # wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
-        wavfile = os.path.join(f'/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/', mat) # Why wav file ?
-        m = ''.join(mat.split('_')[:-1])
-        savefile_L12 = os.path.join(save_L12, m+'.mat')
-        # savefile_L24 = os.path.join(save_L24, m+'.mat')
-        extract_hubert(model, 12, wavfile, savefile_L12)
-        print('savefile_L12 was passed')
-        # extract_hubert(model, 24, wavfile, savefile_L24)
-        # print('savefile_L24 was passed')
+        try:
+            # wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
+            wavfile = os.path.join(f'/content/SpeechFormer2/metadata/dataset/data/content/selected_audio/', mat) # Why wav file ?
+            m = ''.join(mat.split('_')[:-1])
+            savefile_L12 = os.path.join(save_L12, m+'.mat')
+            # savefile_L24 = os.path.join(save_L24, m+'.mat')
+            extract_hubert(model, 12, wavfile, savefile_L12)
+            print('savefile_L12 was passed')
+            # extract_hubert(model, 24, wavfile, savefile_L24)
+            # print('savefile_L24 was passed')
+        except Exception as error:
+            print('ERROR', error)
+
 
 if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
