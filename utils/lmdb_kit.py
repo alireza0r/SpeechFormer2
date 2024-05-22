@@ -122,6 +122,7 @@ def folder2lmdb(opt: dict):
         label = df_sample.iloc[0, :]["label"]
 
         _matdir, sample = modify_matdir_sample(opt, matdir, label, sample)
+        sample = ''.join(sample.split('_'))+'.mat'
         data = io.loadmat(os.path.join(_matdir, sample))[matkey]
 
         if opt['feature'] == 'spec':
