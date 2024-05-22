@@ -181,6 +181,7 @@ def handle_daic(model: Hubert):
 
     mats = os.listdir(matroot)
     print(f'We have {len(mats)} samples in total.')
+    exception_list = []
     for mat in mats:
         try:
             # wavfile = f'/148Dataset/data-chen.weidong/AVEC2017/audio/separate_wav/{mat}_AUDIO.wav' # Why wav file ?
@@ -193,7 +194,11 @@ def handle_daic(model: Hubert):
             # extract_hubert(model, 24, wavfile, savefile_L24)
             # print('savefile_L24 was passed')
         except Exception as error:
+            exception_list.append(mat)
             print('ERROR', error)
+
+    for e in exception_list:
+        print(e)
 
 
 if __name__ == '__main__':
