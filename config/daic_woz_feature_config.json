@@ -51,7 +51,7 @@
 
     "hubert24": {
         "feature_dim": 1024, 
-        "lmdb_root": "/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat/daic_woz_hubert_L24_v6",
+        "lmdb_root": "/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat/daic_woz_hubert_L24_v6",
         "matdir": "/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat",
         "matkey": "hubert", 
         "length": 426,
