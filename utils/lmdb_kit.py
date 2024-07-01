@@ -150,11 +150,11 @@ def folder2lmdb(opt: dict):
 if __name__ == '__main__':
     opt = {
         'database': 'daic_woz',
-        'feature': 'hubert12',
+        'feature': 'hubert24',
         # 'feature': 'wavlm24',
         # 'lmdb_name': 'daic_woz_wavlm_L24',
-        'lmdb_name': 'daic_woz_hubert_L12_v6',
-        'lmdb_root': '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat',
+        'lmdb_name': 'daic_woz_hubert_L24_v6',
+        'lmdb_root': '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat',
         'commit_interval': 100,
         'state': 'train'   # Valid when database is meld or daic_woz.
         }
@@ -163,11 +163,11 @@ if __name__ == '__main__':
 
     opt = {
         'database': 'daic_woz',
-        'feature': 'hubert12',
+        'feature': 'hubert24',
         # 'feature': 'wavlm24',
         # 'lmdb_name': 'daic_woz_wavlm_L24',
-        'lmdb_name': 'daic_woz_hubert_L12_v6',
-        'lmdb_root': '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat',
+        'lmdb_name': 'daic_woz_hubert_L24_v6',
+        'lmdb_root': '/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat',
         'commit_interval': 100,
         'state': 'Valid'   # Valid when database is meld or daic_woz.
         }
