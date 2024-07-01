@@ -51,8 +51,8 @@
 
     "hubert24": {
         "feature_dim": 1024, 
-        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/daic_woz_hubert_L24_v6",
-        "matdir": "/148Dataset/data-chen.weidong/AVEC2017/feature/hubert_large_L24_mat",
+        "lmdb_root": "/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L12_mat/daic_woz_hubert_L24_v6",
+        "matdir": "/content/SpeechFormer2/metadata/dataset/feature/hubert_large_L24_mat",
         "matkey": "hubert", 
         "length": 426,
         "pad_value": 0,
